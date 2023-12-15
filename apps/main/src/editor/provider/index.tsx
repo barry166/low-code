@@ -4,7 +4,7 @@ import {
   useContext,
   useMemo,
   useState,
-} from "React";
+} from "react";
 import {
   DndContext,
   DragEndEvent,

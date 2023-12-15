@@ -4,8 +4,9 @@ const Header = () => {
       style={{
         display: "flex",
         justifyContent: "space-between",
-        padding: "10px",
+        padding: "4px",
         backgroundColor: "#f5f5f5",
+        height: "50px",
       }}
     >
       <div>Logo</div>
