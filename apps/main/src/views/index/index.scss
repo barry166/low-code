@@ -1,0 +1,13 @@
+.index-page {
+  height: 100vh;
+  .content-wrapper {
+    display: flex;
+    .sliderbar,
+    .property-wrapper {
+      width: 300px;
+    }
+    .canvas-wrapper {
+      flex: 1;
+    }
+  }
+}
