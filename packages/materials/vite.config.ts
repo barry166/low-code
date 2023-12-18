@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import typescript from "@rollup/plugin-typescript";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), typescript()],
+  plugins: [react(), visualizer()],
   build: {
     lib: {
       entry: "src/index",

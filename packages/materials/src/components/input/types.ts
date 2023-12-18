@@ -1,4 +1,3 @@
-export interface IButtonProps {
-  type?: "default" | "primary" | "secondary" | "tertiary";
-  children?: React.ReactNode;
-}
+import { InputProps } from "antd";
+
+export interface IInputProps extends InputProps {}

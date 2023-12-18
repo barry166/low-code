@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // 类型文件输出 - todo 生成类型文件
+    // 类型文件输出
     "declaration": true,
     "declarationDir": "dist", // 声明文件输出目录
     "emitDeclarationOnly": true,

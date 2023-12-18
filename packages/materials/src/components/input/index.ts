@@ -1,2 +1,2 @@
-export { default as Button } from "./input";
-export type { IButtonProps } from "./types";
+export { default as Input } from "./input";
+export type { IInputProps } from "./types";
