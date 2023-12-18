@@ -1,8 +1,10 @@
 .index-page {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   .content-wrapper {
     display: flex;
-    .sliderbar,
+    flex: 1;
     .property-wrapper {
       width: 300px;
     }
