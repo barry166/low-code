@@ -26,4 +26,5 @@ export interface IComponent {
   id: string;
   type: ICompType | string;
   content: string;
+  controlProps?: any;
 }

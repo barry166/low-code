@@ -5,3 +5,12 @@ export const componentsListMap = {
   input: Input,
   button: Button,
 };
+
+export const getTargetComponent = (type: string) => {
+  const Comp = componentsListMap[type as keyof typeof componentsListMap];
+  if (!Comp) {
+    console.warn(`组件${type}不存在`);
+    return null;
+  }
+  return Comp;
+};
