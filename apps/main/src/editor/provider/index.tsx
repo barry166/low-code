@@ -107,7 +107,7 @@ export const RootProvider = (props: { children: React.ReactNode }) => {
           return;
         }
 
-        // 2.b. OR move different parent
+        // 2.b. OR move different parent 
         // TODO FIX columns. item includes children
         setLayout(
           handleMoveToDifferentParent(
