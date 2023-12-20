@@ -28,3 +28,5 @@ export interface IComponent {
   content: string;
   controlProps?: any;
 }
+
+export type IMode = "edit" | "preview";
