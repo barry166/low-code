@@ -16,7 +16,7 @@ import {
 import { nanoid } from "nanoid";
 import { IDndDataContext } from "../../types/context";
 import useDndData, { ClearCanNoDropId } from "../hooks/useDndData";
-import { IComponent, ILayout } from "../../types";
+import { IComponent, ILayout, IMode } from "../../types";
 import { initialData } from "../../constant/initialData";
 import { COLUMN, COMPONENT, SIDEBAR_ITEM } from "../../constant/type";
 import {
@@ -27,7 +27,10 @@ import {
 
 export const DndDataContext = createContext<IDndDataContext | null>(null);
 
-export const RootProvider = (props: { children: React.ReactNode }) => {
+export const RootProvider = (props: {
+  mode: IMode;
+  children: React.ReactNode;
+}) => {
   const [layout, setLayout] = useState<ILayout>(initialData.layout);
   const [components, setComponents] = useState<Record<string, IComponent>>(
     initialData.components
@@ -138,8 +141,9 @@ export const RootProvider = (props: { children: React.ReactNode }) => {
       ...dndContextData,
       layout,
       components,
+      mode: props.mode,
     }),
-    [dndContextData, layout, components]
+    [dndContextData, layout, components, props.mode]
   );
 
   return (

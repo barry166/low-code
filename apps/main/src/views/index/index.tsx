@@ -1,4 +1,3 @@
-// import { Button } from "@lowcode/materials";
 import Header from "../../components/header";
 import Editor from "../../editor";
 import "./index.scss";
@@ -8,7 +7,7 @@ function Index() {
     <div className="index-page">
       <Header />
       <div className="content-wrapper">
-        <Editor />
+        <Editor mode="edit" />
       </div>
     </div>
   );
