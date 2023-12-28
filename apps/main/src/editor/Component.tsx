@@ -1,11 +1,11 @@
-import { memo } from "react";
+import { memo, useCallback, useMemo } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
+import { useMachine } from "@xstate/react";
 import { IComponent } from "../types";
 import { COMPONENT } from "../constant/type";
 import { getTargetComponent } from "./maps";
-import { useCallback, useMemo } from "react";
-// import ErrorBoundary from "../components/header/errorBoundary";
+import componentMachine from "../store/componentMachine";
 
 const componentStyle = {
   border: "1px dashed black",
@@ -31,6 +31,17 @@ const Component: React.FC<IProps> = memo((props) => {
       },
     });
 
+  const component = useMemo(() => components[data.id], [components, data.id]);
+
+  const [state, send] = useMachine(componentMachine);
+
+  console.log("x state", state.context.activeComponentData);
+  const handleComponentClick = useCallback(() => {
+    // eslint-disable-next-line no-debugger
+    debugger;
+    send({ type: "SELECT_COMPONENT", data: component });
+  }, [component, send]);
+
   const style = useMemo(
     () => ({
       ...componentStyle,
@@ -40,16 +51,12 @@ const Component: React.FC<IProps> = memo((props) => {
     [transform, isDragging]
   );
 
-  const component = useMemo(() => components[data.id], [components, data.id]);
-
   const renderComponent = useCallback(() => {
     const Comp = getTargetComponent(component?.type);
     if (!Comp) return null;
     const compProps = component;
     return <Comp {...(compProps as any)} />;
   }, [component]);
-
-  console.log("render component", data.id);
 
   return (
     <div
@@ -58,6 +65,7 @@ const Component: React.FC<IProps> = memo((props) => {
       className="component draggable"
       {...listeners}
       {...attributes}
+      onClick={handleComponentClick}
     >
       <div className="component-wrapper" style={{ pointerEvents: "none" }}>
         {renderComponent()}

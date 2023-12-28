@@ -14,11 +14,13 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@lowcode/editor": "workspace:^",
     "@lowcode/materials": "workspace:^",
+    "@xstate/react": "^4.0.2",
     "nanoid": "^5.0.4",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0"
+    "react-router-dom": "^6.21.0",
+    "xstate": "^5.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

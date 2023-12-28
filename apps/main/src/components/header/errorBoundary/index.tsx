@@ -32,7 +32,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render() {
     // eslint-disable-next-line no-debugger
-    debugger;
+    // debugger;
     if (this.state.hasError) {
       // 你可以自定义降级 UI 并渲染
       return (
