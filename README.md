@@ -35,10 +35,12 @@ const handleDrop = useCallback((event: DragEndEvent) => {
 - [x] Sliderbar 组件列表加载-远程加载组件
 通过引入包加载@lowcode/materials加载
 
-- [ ] 添加全局管理状态-组件数据存储
+- [x] 添加全局管理状态-组件数据存储
 X-State状态管理库
 
 - [ ] 属性编排：选中组件进行属性编排
+右侧属性组件：从每个组件的setter中导出
+组件属性设置：更新组件的controlProps值
 
 - [ ] 表单引擎：支持表单布局构建、校验、联动、收集数据等功能
 

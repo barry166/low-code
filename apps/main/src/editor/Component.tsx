@@ -33,12 +33,10 @@ const Component: React.FC<IProps> = memo((props) => {
 
   const component = useMemo(() => components[data.id], [components, data.id]);
 
-  const [state, send] = useMachine(componentMachine);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, send] = useMachine(componentMachine);
 
-  console.log("x state", state.context.activeComponentData);
   const handleComponentClick = useCallback(() => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     send({ type: "SELECT_COMPONENT", data: component });
   }, [component, send]);
 
