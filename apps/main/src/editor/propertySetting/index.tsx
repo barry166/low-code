@@ -1,12 +1,23 @@
 import { useMachine } from "@xstate/react";
+import { Empty } from "antd";
 import componentMachine from "../../store/componentMachine";
+import { getPropertyComp } from "../utils/property";
 
 const PropertySetting = () => {
   const [state] = useMachine(componentMachine);
 
-  console.log("x state", state.context.activeComponentData);
+  const activeComponent = state.context.activeComponentData;
+  console.log("x state activeComponent", state.context.activeComponentData);
 
-  return <div className="property-wrapper">PropertySetting</div>;
+  const renderPropertySetter = () => {
+    if (!activeComponent) return <Empty />;
+    const SetterComp = getPropertyComp(activeComponent.type);
+    if (!SetterComp) return <Empty />;
+    const { controlProps } = activeComponent;
+    return <SetterComp {...controlProps} />;
+  };
+
+  return <div className="property-wrapper">{renderPropertySetter()}</div>;
 };
 
 export default PropertySetting;

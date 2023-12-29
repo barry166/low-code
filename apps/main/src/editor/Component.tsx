@@ -53,7 +53,7 @@ const Component: React.FC<IProps> = memo((props) => {
     const Comp = getTargetComponent(component?.type);
     if (!Comp) return null;
     const compProps = component;
-    return <Comp {...(compProps as any)} />;
+    return <Comp {...(compProps as any).controlProps} />;
   }, [component]);
 
   return (

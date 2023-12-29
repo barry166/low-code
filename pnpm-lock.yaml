@@ -36,6 +36,9 @@ importers:
       '@lowcode/materials':
         specifier: workspace:^
         version: link:../../packages/materials
+      '@xstate/inspect':
+        specifier: ^0.8.0
+        version: 0.8.0(ws@8.16.0)(xstate@5.4.1)
       '@xstate/react':
         specifier: ^4.0.2
         version: 4.0.2(@types/react@18.2.45)(react@18.2.0)(xstate@5.4.1)
@@ -1513,6 +1516,21 @@ packages:
       - supports-color
     dev: true
 
+  /@xstate/inspect@0.8.0(ws@8.16.0)(xstate@5.4.1):
+    resolution: {integrity: sha512-wSkFeOnp+7dhn+zTThO0M4D2FEqZN9lGIWowJu5JLa2ojjtlzRwK8SkjcHZ4rLX8VnMev7kGjgQLrGs8kxy+hw==}
+    peerDependencies:
+      '@types/ws': ^8.0.0
+      ws: ^8.0.0
+      xstate: ^4.37.0
+    peerDependenciesMeta:
+      '@types/ws':
+        optional: true
+    dependencies:
+      fast-safe-stringify: 2.1.1
+      ws: 8.16.0
+      xstate: 5.4.1
+    dev: false
+
   /@xstate/react@4.0.2(@types/react@18.2.45)(react@18.2.0)(xstate@5.4.1):
     resolution: {integrity: sha512-t5Xau/H8nS9nlowV+72RneqaQ/wqkQ8C/8ij4gEvHcoCQptc2REgZkjOpV74xyTabUZnUeYwdDTsMmz5ot3S+Q==}
     peerDependencies:
@@ -2031,6 +2049,10 @@ packages:
   /fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
     dev: true
+
+  /fast-safe-stringify@2.1.1:
+    resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
+    dev: false
 
   /fastq@1.15.0:
     resolution: {integrity: sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==}
@@ -3483,6 +3505,19 @@ packages:
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
+
+  /ws@8.16.0:
+    resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
 
   /xstate@5.4.1:
     resolution: {integrity: sha512-1DDT047hsTCSgm3BwLyb4sXQDmTdbLutc4ni0MLACgd2yX6vij35pnNNf1F4U6kQ8njx6NxQ6wpLjlh1lqs0NQ==}
