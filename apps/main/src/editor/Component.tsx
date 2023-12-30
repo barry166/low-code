@@ -1,11 +1,10 @@
 import { memo, useCallback, useMemo } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
-import { useMachine } from "@xstate/react";
 import { IComponent } from "../types";
 import { COMPONENT } from "../constant/type";
 import { getTargetComponent } from "./maps";
-import componentMachine from "../store/componentMachine";
+import { MachineContext } from "./provider/XStateProvider";
 
 const componentStyle = {
   border: "1px dashed black",
@@ -33,8 +32,7 @@ const Component: React.FC<IProps> = memo((props) => {
 
   const component = useMemo(() => components[data.id], [components, data.id]);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, send] = useMachine(componentMachine);
+  const { send } = MachineContext.useActorRef();
 
   const handleComponentClick = useCallback(() => {
     send({ type: "SELECT_COMPONENT", data: component });

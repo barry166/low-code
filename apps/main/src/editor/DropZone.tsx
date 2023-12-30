@@ -1,8 +1,8 @@
 import { useDroppable, useDndMonitor } from "@dnd-kit/core";
 import { useState } from "react";
 import { COLUMN, COMPONENT, ROW, SIDEBAR_ITEM } from "../constant/type";
-import { useDndDataContext } from "./provider";
 import { ClearCanNoDropId, SetCanNoDropId } from "./hooks/useDndData";
+import { useDndDataContext } from "./provider/DndProvider";
 
 interface IData {
   path: string;

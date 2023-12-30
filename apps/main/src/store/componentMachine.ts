@@ -39,4 +39,4 @@ const componentMachine = createMachine<
   },
 });
 
-export default componentMachine;
+export default componentMachine

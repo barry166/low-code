@@ -1,4 +1,6 @@
 const Header = () => {
+  const handleClick = () => {};
+
   return (
     <div
       style={{
@@ -10,7 +12,7 @@ const Header = () => {
       }}
     >
       <div>Logo</div>
-      <button>操作按钮</button>
+      <button onClick={handleClick}>操作按钮</button>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import { useDndDataContext } from "../provider";
 import DropZone from "../DropZone";
 import { ILayoutItem } from "../../types";
 import Row from "../Row";
+import { useDndDataContext } from "../provider/DndProvider";
 import "./index.scss";
 
 const Canvas = () => {
