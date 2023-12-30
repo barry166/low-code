@@ -1,8 +1,10 @@
 import { createMachine, assign } from "xstate";
-import { IComponent } from "../types";
+import { IComponent, ILayout } from "../types";
 
 type ComponentContext = {
   activeComponentData: IComponent | null;
+  layout: ILayout;
+  components: Record<string, IComponent>;
 };
 
 type ComponentEvent = { type: "SELECT_COMPONENT"; data: IComponent };
@@ -22,6 +24,8 @@ const componentMachine = createMachine<
   initial: "idle",
   context: {
     activeComponentData: null,
+    layout: [],
+    components: {},
   },
   states: {
     idle: {
@@ -39,4 +43,4 @@ const componentMachine = createMachine<
   },
 });
 
-export default componentMachine
+export default componentMachine;

@@ -1,13 +1,28 @@
-import { ProForm, ProFormText } from "@ant-design/pro-components";
+import { ProForm, ProFormSelect } from "@ant-design/pro-components";
+import { IButtonProps } from ".";
+import { CommonSetterProps } from "../../helper/types";
 
-const ButtonSetter = () => {
+const ButtonSetter = (props: IButtonProps & CommonSetterProps) => {
+  console.log("ButtonSetter", props);
   return (
     <ProForm
-      onFinish={async (values) => {
-        console.log(values);
+      submitter={false}
+      onValuesChange={(values: any) => {
+        console.log("onValuesChange", values);
+        props.onChange(values);
       }}
     >
-      <ProFormText name="lable" label="文本" />
+      <ProFormSelect
+        name="type"
+        label="type"
+        options={[
+          { label: "default", value: "default" },
+          { label: "primary", value: "primary" },
+          { label: "secondary", value: "secondary" },
+          { label: "tertiary", value: "tertiary" },
+        ]}
+        placeholder="Please select a type"
+      />
     </ProForm>
   );
 };

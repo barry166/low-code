@@ -7,14 +7,18 @@ const PropertySetting = () => {
     (state) => state.context.activeComponentData
   );
 
-  console.log("x state activeComponent", activeComponent);
+  // property改变时触发
+  const onPropertyChange = (value: any) => {
+    console.log("onPropertyChange", value);
+    // 改变全局xstate的值
+  };
 
   const renderPropertySetter = () => {
     if (!activeComponent) return <Empty />;
     const SetterComp = getPropertyComp(activeComponent.type);
     if (!SetterComp) return <Empty />;
     const { controlProps } = activeComponent;
-    return <SetterComp {...controlProps} />;
+    return <SetterComp {...controlProps} onChange={onPropertyChange} />;
   };
 
   return (
