@@ -7,10 +7,19 @@ const PropertySetting = () => {
     (state) => state.context.activeComponentData
   );
 
+  const { send } = MachineContext.useActorRef();
+
   // property改变时触发
   const onPropertyChange = (value: any) => {
     console.log("onPropertyChange", value);
     // 改变全局xstate的值
+    send({
+      type: "UPDATE_COMPONENT",
+      payload: {
+        id: activeComponent!.id,
+        controlProps: value,
+      },
+    });
   };
 
   const renderPropertySetter = () => {

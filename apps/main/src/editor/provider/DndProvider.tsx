@@ -16,7 +16,7 @@ import {
 import { nanoid } from "nanoid";
 import { IDndDataContext } from "../../types/context";
 import useDndData, { ClearCanNoDropId } from "../hooks/useDndData";
-import { IComponent, ILayout, IMode } from "../../types";
+import { IComponent, ILayout } from "../../types";
 import { initialData } from "../../constant/initialData";
 import { COLUMN, COMPONENT, SIDEBAR_ITEM } from "../../constant/type";
 import {

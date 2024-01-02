@@ -15,5 +15,6 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "@typescript-eslint/no-explicit-any": "off",
+    "no-unsafe-optional-chaining": "off", // 可选链提示禁用
   },
 };

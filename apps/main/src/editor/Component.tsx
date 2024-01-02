@@ -35,7 +35,7 @@ const Component: React.FC<IProps> = memo((props) => {
   const { send } = MachineContext.useActorRef();
 
   const handleComponentClick = useCallback(() => {
-    send({ type: "SELECT_COMPONENT", data: component });
+    send({ type: "SELECT_COMPONENT", payload: component });
   }, [component, send]);
 
   const style = useMemo(

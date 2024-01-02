@@ -3,10 +3,12 @@ import DropZone from "../DropZone";
 import { ILayoutItem } from "../../types";
 import Row from "../Row";
 import { useDndDataContext } from "../provider/DndProvider";
+import { useInitData } from "../hooks/useInitData";
 import "./index.scss";
 
 const Canvas = () => {
   const { layout, components } = useDndDataContext();
+  useInitData();
 
   const renderRow = (row: ILayoutItem, currentPath: string) => {
     return (
